@@ -1,0 +1,27 @@
+﻿@using FinanceBot.Models
+@model IList<Ingot>
+@{
+    ViewBag.Title = "Стоимость слитков";
+}
+<h2>@ViewBag.Title.</h2>
+<table width="750" border="1" align="center">
+    <tr>
+        <th>ИД</th>
+        <th>Дата</th>
+        <th>Номинал</th>
+        <th>С серт. кач. руб.</th>
+        <th>Покупка, руб.</th>
+        <th>Продажа, руб.</th>
+    </tr>
+    @foreach (var ingot in Model)
+    {
+        <tr>
+            <th>@ingot.MetalId</th>
+            <th>@ingot.Date.ToShortDateString()</th>
+            <th>@ingot.Nominal</th>
+            <th>@ingot.CertificateRubles</th>
+            <th>@ingot.BanksRubles</th>
+            <th>@ingot.EntitiesRubles</th>
+        </tr>
+    }
+</table>
